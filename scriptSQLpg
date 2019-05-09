@@ -1,0 +1,90 @@
+DROP TABLE  IF EXISTS tr_personne_per CASCADE;
+DROP TABLE  IF EXISTS tr_service_ser CASCADE;
+DROP TABLE  IF EXISTS tr_etudiant_etu CASCADE;
+DROP TABLE  IF EXISTS tr_professeur_pro CASCADE;
+DROP TABLE  IF EXISTS tr_demande_dem CASCADE;
+DROP TABLE  IF EXISTS tr_fichier_fic CASCADE;
+DROP TABLE  IF EXISTS tj_actetu CASCADE;
+DROP TABLE  IF EXISTS tj_actpro CASCADE;
+DROP TABLE  IF EXISTS tr_activite_act CASCADE;
+
+CREATE TABLE tr_personne_per (
+	per_id BIGINT AUTO_INCREMENT ,
+	per_user VARCHAR(100),
+	per_password VARCHAR(1000),
+	per_nom VARCHAR(100),
+	per_mail VARCHAR(500)
+	CONSTRAINT pk_per PRIMARY KEY (per_id)
+);
+
+CREATE TABLE tr_service_ser (
+	ser_id BIGINT AUTO_INCREMENT,
+	CONSTRAINT pk_ser PRIMARY KEY (ser_id)
+) INHERITS tr_personne_per;
+
+CREATE TABLE tr_etudiant_etu (
+	etu_id BIGINT AUTO_INCREMENT,
+	CONSTRAINT pk_etu PRIMARY KEY (etu_id)
+) INHERITS tr_personne_per;
+
+CREATE TABLE tr_professeur_pro (
+	pro_id BIGINT AUTO_INCREMENT,
+	CONSTRAINT pk_pro PRIMARY KEY (pro_id)
+) INHERITS tr_personne_per;
+
+
+CREATE TABLE tr_demande_dem (
+	dem_id BIGINT AUTO_INCREMENT,
+	dem_type VARCHAR(50),
+	dem_message TEXT,
+	per_id BIGINT,
+	CONSTRAINT pk_dem PRIMARY KEY (dem_id)
+);
+
+CREATE TABLE tr_fichier_fic (
+	fic_id BIGINT AUTO_INCREMENT,
+	fic_data BYTEA,
+	fic_nom VARCHAR(100),
+	dem_id BIGINT,
+	CONSTRAINT pk_fic PRIMARY KEY (fic_id)
+);
+
+CREATE TABLE tj_actetu (
+	act_id BIGINT,
+	etu_id BIGINT,
+	CONSTRAINT pk_actetu PRIMARY KEY (act_id,etu_id)
+);
+
+CREATE TABLE tj_actpro (
+	pro_id BIGINT,
+	act_id BIGINT,
+	CONSTRAINT pk_actepro PRIMARY KEY (pro_id,act_id)
+);
+
+CREATE TABLE tr_activite_act (
+	act_id BIGINT AUTO_INCREMENT,
+	act_nom VARCHAR(500),
+	act_type VARCHAR(50),
+	CONSTRAINT pk_act PRIMARY KEY (act_id)
+);
+
+ALTER TABLE tr_fichier_fic
+ADD CONSTRAINT fk_fic_dem FOREIGN KEY (dem_id) REFERENCES tr_fichier_fic (dem_id);
+
+ALTER TABLE  tr_demande_dem
+ADD CONSTRAINT fk_dem_per FOREIGN KEY (per_id) REFERENCES tr_personne_per (per_id);
+
+ALTER TABLE tj_actpro 
+ADD CONSTRAINT fk_actpro_pro FOREIGN KEY (pro_id) REFERENCES tr_professeur_pro (pro_id);
+
+ALTER TABLE tj_actpro 
+ADD CONSTRAINT fk_actpro_act FOREIGN KEY (act_id) REFERENCES tr_activite_act (act_id);
+
+ALTER TABLE tj_actetu 
+ADD CONSTRAINT fk_actetu_pro FOREIGN KEY (pro_id) REFERENCES tr_professeur_pro (pro_id);
+
+ALTER TABLE tj_actetu 
+ADD CONSTRAINT fk_actetu_act FOREIGN KEY (act_id) REFERENCES tr_activite_act (act_id);
+
+ALTER TABLE tr_demande_dem 
+ADD CONSTRAINT ck_dem_type CHECK (dem_type IN ('proposition', 'travaux', 'commande'));
