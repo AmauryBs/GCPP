@@ -9,7 +9,7 @@ DROP TABLE  IF EXISTS tj_actpro CASCADE;
 DROP TABLE  IF EXISTS tr_activite_act CASCADE;
 
 CREATE TABLE tr_personne_per (
-	per_id BIGINT ,
+	per_id BIGSERIAL ,
 	per_user VARCHAR(100),
 	per_password VARCHAR(1000),
 	per_nom VARCHAR(100),
@@ -18,23 +18,23 @@ CREATE TABLE tr_personne_per (
 );
 
 CREATE TABLE tr_service_ser (
-	ser_id BIGINT,
+	ser_id BIGSERIAL,
 	CONSTRAINT pk_ser PRIMARY KEY (ser_id)
 ) INHERITS (tr_personne_per);
 
 CREATE TABLE tr_etudiant_etu (
-	etu_id BIGINT,
+	etu_id BIGSERIAL,
 	CONSTRAINT pk_etu PRIMARY KEY (etu_id)
 ) INHERITS (tr_personne_per);
 
 CREATE TABLE tr_professeur_pro (
-	pro_id BIGINT,
+	pro_id BIGSERIAL,
 	CONSTRAINT pk_pro PRIMARY KEY (pro_id)
 ) INHERITS (tr_personne_per);
 
 
 CREATE TABLE tr_demande_dem (
-	dem_id BIGINT,
+	dem_id BIGSERIAL,
 	dem_type VARCHAR(50),
 	dem_message TEXT,
 	per_id BIGINT,
@@ -42,7 +42,7 @@ CREATE TABLE tr_demande_dem (
 );
 
 CREATE TABLE tr_fichier_fic (
-	fic_id BIGINT,
+	fic_id BIGSERIAL,
 	fic_data BYTEA,
 	fic_nom VARCHAR(100),
 	dem_id BIGINT,
@@ -62,7 +62,7 @@ CREATE TABLE tj_actpro (
 );
 
 CREATE TABLE tr_activite_act (
-	act_id BIGINT,
+	act_id BIGSERIAL,
 	act_nom VARCHAR(500),
 	act_type VARCHAR(50),
 	CONSTRAINT pk_act PRIMARY KEY (act_id)
