@@ -1,26 +1,30 @@
 <?php
+	// TODO Fix interger error with PDO (bindValue method ?)
 	class BDD {
 		public static $connection=null;
-		private static $type='mysql';
-		private static $host='localhost';
-		private static $database='bonsoir';
-		private static $user='root';
-		private static $password='root';
 
-		public static function connect($type,$host,$database,$user,$password) {
+		public static function connect($type,$host,$port,$database,$user,$password) {
 			try{
-				$this->connection = new PDO(BDD::$type.':host='.BDD::$host.';dbname='.BDD::$database.';charset=utf8',BDD::$user,BDD::$password,[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+				BDD::$connection = new PDO($type.':host='.$host.';port='.$port.';dbname='.$database,$user,$password,[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 			} catch (Exception $e){die('Erreur : '.$e->getMessage());}
 		}
 
 		public static function query(string $sql,array $parameters=NULL) {
 			if($parameters==NULL) {
 				if(strtoupper(substr($sql,0,6))=='SELECT')
-					return $this->connection->query($sql)->fetchAll();
-				return $this->connection->query($sql);
+					return BDD::$connection->query($sql)->fetchAll();
+				return BDD::$connection->query($sql);
 			}
-			$sql=$this->connection->prepare($sql)->execute($parameters);
+			$sql=BDD::$connection->prepare($sql)->execute($parameters);
 			return $sql->fetchAll();
 		}
+
+		public static function removeIntIndexes(array $data) {
+			$new=[];
+			foreach($data as $key=>$value)
+				if(!preg_match('/^\d+$/',$key))
+					$new[$key]=$value;
+			return $new;
+		}
 	}
-	BDD::connect();
+	BDD::connect('pgsql','localhost',5432,'gcpp','postgres','postgres');
