@@ -1,0 +1,73 @@
+body {
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	text-align: center;
+}
+
+#polytech {
+	width: 150px;
+}
+
+main {
+	width: 90%;
+	margin: 10px auto;
+	border: solid 1px black;
+}
+
+header {
+	background-color: #daefee;
+	border-bottom: solid 1px black;
+}
+
+section {
+	background-color: #ffddf7;
+	padding: 1px 60px 40px 20px;
+}
+
+footer {
+	background-color: #daefee;
+	border-top: solid 1px black;
+}
+
+#menu a{
+	text-decoration:none;
+}
+
+ul#lemenu{
+	list-style: none;
+}
+
+ul#lemenu li{
+	display: inline;
+}
+
+.btn_menu {
+	width: 20%;
+	display:inline-block;
+	font-size:12px;
+	border: 1px solid #40AAD4;
+	background-color: #daefee;
+}
+
+.btn_menu:hover {
+	background-color:#ffab23;
+}
+
+.encours, .encours:hover {
+  	background-color: #B3FF99;
+}
+
+@media (max-width: 720px) {
+
+	ul#lemenu{
+	margin-left: -270px;
+	}
+
+	ul#lemenu li{
+	display: block;
+	}
+
+	.btn_menu {
+		width:14%;
+		margin-top: 4px;
+	}
+}
