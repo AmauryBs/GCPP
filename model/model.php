@@ -1,4 +1,6 @@
 <?php
+	include 'bdd.php';
+
 	class Model {
 		public static $table='';
 		public static $id='';
