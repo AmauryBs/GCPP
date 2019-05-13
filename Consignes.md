@@ -1,4 +1,4 @@
-##Projet n°1 - Gestion des commandes pour projets pédagogiques
+# Projet n°1 - Gestion des commandes pour projets pédagogiques
 
 Il s'agit de concevoir et réaliser une application web qui permet de gérer des commandes d'équipements pour les besoins des étudiants. Le processus à l'école est le suivant :
 * les étudiants remontent leurs besoins en termes de matériel/logiciel à l'enseignant responsable de l'enseignement concerné (CM, TD...)
@@ -12,7 +12,7 @@ Il s'agit de concevoir et réaliser une application web qui permet de gérer des
 * la possibilité d'envoyer des mels aux personnes concernées.
 
 
-##Gestion des informations
+## Gestion des informations
 
 Le site web doit amener à gérer des informations nécessitant la mise en place d'une base de données :
 * La liste des participants au projet en prenant en compte les possibles évolutions au cours du temps
@@ -23,13 +23,13 @@ Le site web doit amener à gérer des informations nécessitant la mise en place
 * Un sondage fermé de type QCM ou autres
 * ...
 
-##Environnement de travail
+## Environnement de travail
 
 Vous disposez :
 * d'une base de données MySQL propre au projet (serveur HS, choix d'utiliser PostgreSQL)
 * d'un compte d'accès spécifique pour chaque équipe de travail (nous n'en servons pas, nous avons un GitHub)
 
-##Consignes
+## Consignes
 
 L'ensemble de votre site devra être responsive design.
 
@@ -47,7 +47,7 @@ Le site devra être réalisé en HTML5 et devra comporter des feuilles de styles
 
 Attention aux droits à l'image ainsi qu'aux droits d'auteur sur les contenus que vous pourriez placer sur votre site (image, texte, ...). Pensez que votre site a vocation à être mis en ligne et il doit être exemplaire de ce point de vue.
 
-##Évaluation
+## Évaluation
 
 * Un rapport expliquant les choix de conception du site web, la modélisation des données, les problèmes rencontrés, l'organisation de l'équipe.
 * L'ergonomie du site, sa capacité à répondre aux besoins du cahier des charges, sa robustesse.
