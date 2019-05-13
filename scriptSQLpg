@@ -13,7 +13,7 @@ CREATE TABLE tr_personne_per (
 	per_user VARCHAR(100),
 	per_password VARCHAR(1000),
 	per_nom VARCHAR(100),
-	per_mail VARCHAR(500)
+	per_mail VARCHAR(500),
 	CONSTRAINT pk_per PRIMARY KEY (per_id)
 );
 
