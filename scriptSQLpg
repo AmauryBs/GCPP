@@ -20,17 +20,17 @@ CREATE TABLE tr_personne_per (
 CREATE TABLE tr_service_ser (
 	ser_id BIGINT AUTO_INCREMENT,
 	CONSTRAINT pk_ser PRIMARY KEY (ser_id)
-) INHERITS tr_personne_per;
+) INHERITS (tr_personne_per);
 
 CREATE TABLE tr_etudiant_etu (
 	etu_id BIGINT AUTO_INCREMENT,
 	CONSTRAINT pk_etu PRIMARY KEY (etu_id)
-) INHERITS tr_personne_per;
+) INHERITS (tr_personne_per);
 
 CREATE TABLE tr_professeur_pro (
 	pro_id BIGINT AUTO_INCREMENT,
 	CONSTRAINT pk_pro PRIMARY KEY (pro_id)
-) INHERITS tr_personne_per;
+) INHERITS (tr_personne_per);
 
 
 CREATE TABLE tr_demande_dem (
