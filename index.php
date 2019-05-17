@@ -11,6 +11,8 @@
 			break;
 
 			case $_GET['route']=='espace':
+				if (!isset($_SESSION['utilisateur']['per_id']))
+					header('Location : .');
 				include_once 'controller/espaceController.php';
 				include_once 'espace.php';
 			break;
