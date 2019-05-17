@@ -20,8 +20,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['password']) && $_SESSION['u
 
 		}
 		
-		$user = array('per_id' => $result[0][0] , 'per_user' =>$result[0][1],'per_password' =>$result[0][2],'per_nom' =>$result[0][3],'per_mail' =>$result[0][4],'etu_id' => $res[0][0], 'type' =>'etudiant');
-
+		$user=[];
 		if($i==1)
 		{
 			$user = array('per_id' => $result[0][0] , 'per_user' =>$result[0][1],'per_password' =>$result[0][2],'per_nom' =>$result[0][3],'per_mail' =>$result[0][4],'etu_id' => $res[0][0], 'type' =>'etudiant');
@@ -29,12 +28,12 @@ if (isset($_SESSION['username']) && isset($_SESSION['password']) && $_SESSION['u
 
 		if($i==2)
 		{
-			$user = array('per_id' => $result[0][0] , 'per_user' =>$result[0][1],'per_password' =>$result[0][2],'per_nom' =>$result[0][3],'per_mail' =>$result[0][4],'etu_id' => $res[0][0], 'type' =>'etudiant','pro_id' =>$res[0][0], 'type' =>'professeur');
+			$user = array('per_id' => $result[0][0] , 'per_user' =>$result[0][1],'per_password' =>$result[0][2],'per_nom' =>$result[0][3],'per_mail' =>$result[0][4],'pro_id' =>$res[0][0], 'type' =>'professeur');
 		}
 
 		if($i==3)
 		{
-			$user = array('per_id' => $result[0][0] , 'per_user' =>$result[0][1],'per_password' =>$result[0][2],'per_nom' =>$result[0][3],'per_mail' =>$result[0][4],'etu_id' => $res[0][0], 'type' =>'etudiant','ser_id' =>$res[0][0], 'type' =>'service');
+			$user = array('per_id' => $result[0][0] , 'per_user' =>$result[0][1],'per_password' =>$result[0][2],'per_nom' =>$result[0][3],'per_mail' =>$result[0][4],'ser_id' =>$res[0][0], 'type' =>'service');
 		}
 
 
