@@ -5,15 +5,13 @@
 		include_once 'connexion.php';
 	else
 	{
-
-
 		switch(true) {
 			case $_GET['route']=='connexion':
-				include_once 'connexionController.php';
+				include_once 'controller/connexionController.php';
 			break;
 
 			case $_GET['route']=='espace':
-				include_once 'espaceController.php';
+				include_once 'controller/espaceController.php';
 				include_once 'espace.php';
 			break;
 
