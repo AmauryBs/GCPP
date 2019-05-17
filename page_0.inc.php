@@ -1,2 +1,1 @@
-<p>Bonjour <?php $username ="Michel";
- echo $username ?> </p>
+<p>Bonjour <?php echo $username ?> </p>
