@@ -17,7 +17,7 @@ if (isset($_POST["username"]) and isset($_POST["password"]))
 	<main>
 		<header>Gestion des commandes pour projets pédagogiques</header>
 		<section>
-			<form action="index.php" method="post">
+			<form action="connexion.php" method="post">
 					<?php
 					$username_set = isset($_POST["username"]) && empty($_POST["username"]);
 					$password_set = isset($_POST["password"])  && empty($_POST["password"]);

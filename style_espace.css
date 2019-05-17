@@ -41,8 +41,9 @@ ul#lemenu li{
 }
 
 .btn_menu {
-	width: 20%;
-	display:inline-block;
+	width: 100px;
+	height: 30px;
+	display: inline-table;
 	font-size:12px;
 	border: 1px solid #40AAD4;
 	background-color: #daefee;
@@ -56,18 +57,9 @@ ul#lemenu li{
   	background-color: #B3FF99;
 }
 
-@media (max-width: 720px) {
-
-	ul#lemenu{
-	margin-left: -270px;
-	}
-
-	ul#lemenu li{
-	display: block;
-	}
-
-	.btn_menu {
-		width:14%;
-		margin-top: 4px;
-	}
+textarea {
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 60%;
+    height: 180px;
 }

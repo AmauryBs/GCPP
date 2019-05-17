@@ -13,27 +13,28 @@
 			<div id="menu">
 				<ul id="lemenu">
 				<?php
-				$encours = array(" "," "," "," ");
-				$page=0;
-				$user_type ="ser";
-				$encours[$page] = "encours";
+				$encours = array(" "," "," "," "," ");
+			    if( !isset($_GET["page"]) ) { 
+			    	$page=0;
+			    }else{
+			   		$page=$_GET["page"];
+			    }
+			    $encours[$page] = "encours";
+				$user_type ="etu";
 				echo "<li><a href=\"?page=0\" class=\"btn_menu $encours[0]\">Accueil</a></li>\n";
-				if( $user_type =="etu"){
-					echo "<li><a href=\"?page=1\" class=\"btn_menu $encours[1]\">Envoyer une demande</a></li>\n";
+				echo "<li><a href=\"?page=1\" class=\"btn_menu $encours[1]\">Envoyer une demande</a></li>\n";
+				if( $user_type == "pro" or $user_type == "ser"){
+					echo "<li><a href=\"?page=2\" class=\"btn_menu $encours[2]\">Demandes en attente</a></li>\n";
 					}
-				else{
-					echo "<li><a href=\"?page=2\" class=\"btn_menu $encours[1]\">Demandes en attente</a></li>\n";
-					}
-				echo "<li><a href=\"?page=3\" class=\"btn_menu $encours[2]\">Historique
+				echo "<li><a href=\"?page=3\" class=\"btn_menu $encours[3]\">Historique
 																			demandes</a></li> \n";
-				echo "<li><a href=\"?page=4\" class=\"btn_menu $encours[3]\">Historique
+				echo "<li><a href=\"?page=4\" class=\"btn_menu $encours[4]\">Historique
 																			commandes</a></li> \n";
 				?>
 				</ul>
 			<div>
 			<div id="contenu">
 			    <?php
-			    $page=0;
 			    if( file_exists("page_".$page.".inc.php") ){ 
 			    	include("page_".$page.".inc.php");
 			   	}

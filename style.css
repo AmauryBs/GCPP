@@ -24,6 +24,16 @@ section {
 	padding: 10px;
 }
 
+form > p {
+	color: red;
+	font-size: 12px;
+	margin: auto;
+	padding: 2px;
+	width: 50%;
+	background-color: white;
+	border: solid 1px red;
+} 
+
 input {
 	width: 50%;
 	margin: 4px;
@@ -37,13 +47,3 @@ footer {
 	background-color: #daefee;
 	border-top: solid 1px black;
 }
-
-form > p {
-	color: red;
-	font-size: 12px;
-	margin: auto;
-	padding: 2px;
-	width: 50%;
-	background-color: white;
-	border: solid 1px red;
-} 
