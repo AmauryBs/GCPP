@@ -40,6 +40,9 @@
 			   	}
 			      ?>
     	</div>
+    	<div id = "messagePHP">
+    		<?php if (isset($_GET["message"])){echo $_GET["message"];} ?>
+    	</div>
 		</section>
 		<footer>Espace personnel</footer>
 	</main>

@@ -61,6 +61,16 @@ ul#lemenu li{
 	text-align: none;
 }
 
+#messagePHP {
+	color: red;
+	font-size: 12px;
+	margin: auto;
+	padding: 2px;
+	width: 50%;
+	background-color: white;
+	border: solid 1px green;
+} 
+
 textarea {
     border-radius: 5px;
     border: 1px solid black;
