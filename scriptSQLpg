@@ -15,7 +15,7 @@ CREATE TABLE tr_personne_per (
 	per_nom VARCHAR(100),
 	per_mail VARCHAR(500),
 	CONSTRAINT pk_per PRIMARY KEY (per_id),
-	CONSTRAINT uq_per UNIQUE (per_user,per_password)
+	CONSTRAINT uq_per_user_password UNIQUE (per_user,per_password)
 );
 
 CREATE TABLE tr_service_ser (
