@@ -72,8 +72,6 @@ CREATE TABLE tr_activite_act (
 
 ALTER TABLE tr_fichier_fic
 ADD CONSTRAINT fk_fic_dem FOREIGN KEY (dem_id) REFERENCES tr_demande_dem (dem_id);
-ALTER TABLE tr_demande_dem
-ADD CONSTRAINT fk_dem_per FOREIGN KEY (per_id) REFERENCES tr_personne_per (per_id);
 ALTER TABLE tj_actpro 
 ADD CONSTRAINT fk_actpro_pro FOREIGN KEY (pro_id) REFERENCES tr_professeur_pro (pro_id);
 ALTER TABLE tj_actpro 
@@ -96,6 +94,6 @@ INSERT INTO tr_activite_act(act_nom,act_type) VALUES('activite2nom','TD');
 INSERT INTO tr_activite_act(act_nom,act_type) VALUES('activite3nom','CM');
 INSERT INTO tr_activite_act(act_nom,act_type) VALUES('activite4nom','CM');
 INSERT INTO tr_activite_act(act_nom,act_type) VALUES('activite3nom','CM');
-INSERT INTO tr_demande_dem(dem_type,dem_titre,dem_message) VALUES('proposition','demande1title','demande1message');
-INSERT INTO tr_demande_dem(dem_type,dem_titre,dem_message) VALUES('travaux','demande2title','demande1message');
-INSERT INTO tr_demande_dem(dem_type,dem_titre,dem_message) VALUES('commande','demande3title','demande3message');
+INSERT INTO tr_demande_dem(dem_type,dem_titre,dem_message,per_id) VALUES('proposition','demande1titre','demande1message',1);
+INSERT INTO tr_demande_dem(dem_type,dem_titre,dem_message,per_id) VALUES('travaux','demande2titre','demande2message',4);
+INSERT INTO tr_demande_dem(dem_type,dem_titre,dem_message,per_id) VALUES('commande','demande3titre','demande3message',6);
