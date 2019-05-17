@@ -10,22 +10,7 @@
 
 		case $_GET['route']=='espace':
 			include_once 'espaceController.php';
-		break;
-
-		case $_GET['route']=='page_0':
-			include_once 'page_0Controller.php';
-		break;
-
-		case $_GET['route']=='page_1':
-			include_once 'page_1Controller.php';
-		break;
-
-		case $_GET['route']=='page_2':
-			include_once 'page_2Controller.php';
-		break;
-
-		case $_GET['route']=='page_3':
-			include_once 'page_3Controller.php';
+			include_once 'espace.php';
 		break;
 
 		default:
