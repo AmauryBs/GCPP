@@ -1,1 +1,1 @@
-<p>Bonjour <?php echo $username ?> </p>
+<p>Bonjour <?php echo $_SESSION['utilisateur']->per_nom; ?> </p>
