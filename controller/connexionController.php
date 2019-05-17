@@ -2,10 +2,8 @@
 $_SESSION["username"]=$_POST['username'];
 $_SESSION["password"]=$_POST['password'];
 include 'model.php';
-echo"ok1";
 if (isset($_SESSION['username']) && isset($_SESSION['password']) && $_SESSION['username']!="" && $_SESSION['password']!="" && $_POST['form']="connexion")
 {
-	echo"ok2";
 	$sql = "SELECT * FROM tr_personne_per WHERE per_user='".$_SESSION["username"]."' AND per_password='".$_SESSION["password"]."'";
 	$result = BDD::query($sql);
 	if($_SESSION['username'] == $result[0][1] && $_SESSION['password'] == $result[0][2])
@@ -21,12 +19,20 @@ if (isset($_SESSION['username']) && isset($_SESSION['password']) && $_SESSION['u
 			$i++;
 
 		}
+		
+		$user = array('per_id' =>$result[0][0] , 'per_user' =>$result[0][1],'per_password' =>$result[0][2],'per_nom' =>$result[0][3],'per_mail' =>$result[0][4]);
+
 		if($i==1)
-			$_SESSION['utilisateur'] = new Etudiant($res[0][0]);
-		if($i==1)
-			$_SESSION['utilisateur'] = new Professeur($res[0][0]);
-		if($i==1)
-			$_SESSION['utilisateur'] = new Service($res[0][0]);
+			array_push($user, 'etu_id' =>$res[0][0], 'type' =>'etudiant');
+
+		if($i==2)
+			array_push($user, 'pro_id' =>$res[0][0], 'type' =>'professeur');
+
+		if($i==3)
+			array_push($user, 'ser_id' =>$res[0][0], 'type' =>'service');
+
+
+		$_SESSION['utilisateur'] = $user
 		header("Location: .?route=espace");
 	}
 	else
