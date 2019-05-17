@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>Initiateur</th>
+    <th>Titre</th>
+  </tr>
+  <?php
+    while($row=$histo_dem){
+      echo'<tr>
+          <td>'.$row['pers_nom'].'</td>
+          <td>'.$row['dem_titre'].'</td>
+          </tr>'
+  ?>
+</table>

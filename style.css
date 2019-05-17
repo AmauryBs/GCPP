@@ -1,0 +1,49 @@
+body {
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	text-align: center;
+}
+
+#polytech {
+	width: 150px;
+}
+
+main {
+	width: 50%;
+	max-width: 600px;
+	margin: 10px auto;
+	border: solid 1px black;
+}
+
+header {
+	background-color: #daefee;
+	border-bottom: solid 1px black;
+}
+
+section {
+	background-color: #ffddf7;
+	padding: 10px;
+}
+
+form > p {
+	color: red;
+	font-size: 12px;
+	margin: auto;
+	padding: 2px;
+	width: 50%;
+	background-color: white;
+	border: solid 1px red;
+} 
+
+input {
+	width: 50%;
+	margin: 4px;
+}
+
+button {
+	margin: 10px;
+}
+
+footer {
+	background-color: #daefee;
+	border-top: solid 1px black;
+}
