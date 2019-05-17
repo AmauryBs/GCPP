@@ -30,6 +30,7 @@
 																			demandes</a></li> \n";
 				echo "<li><a href=\"?route=espace&page=4\" class=\"btn_menu $encours[4]\">Historique
 																			commandes</a></li> \n";
+				echo "<li><a href=\"?route=deconnexion\" class=\"btn_menu dc\">Déconnexion</a></li> \n";
 				?>
 				</ul>
 			<div>
@@ -40,9 +41,7 @@
 			   	}
 			      ?>
     	</div>
-    	<div id = "messagePHP">
-    		<?php if (isset($_GET["message"])){echo $_GET["message"];} ?>
-    	</div>
+    		<?php if (isset($_GET["message"])){echo '<div id = "messagePHP">'.$_GET["message"].'</div>';} ?>
 		</section>
 		<footer>Espace personnel</footer>
 	</main>
