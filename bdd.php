@@ -28,4 +28,4 @@
 		}
 	}
 	//BDD::connect('pgsql','localhost',5433,'GCPP','postgres','EN-402-XF');
-	BDD::connect('pgsql','localhost',5432,'gccp','postgres','postgres');
+	BDD::connect('pgsql','localhost',5432,'gcpp','postgres','postgres');
