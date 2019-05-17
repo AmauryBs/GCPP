@@ -57,9 +57,17 @@ ul#lemenu li{
   	background-color: #B3FF99;
 }
 
+#contenu {
+	text-align: none;
+}
+
 textarea {
     border-radius: 5px;
     border: 1px solid black;
     width: 60%;
     height: 180px;
+}
+
+input {
+	width: 60%;
 }

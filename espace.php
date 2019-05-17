@@ -20,7 +20,7 @@
 			   		$page=$_GET["page"];
 			    }
 			    $encours[$page] = "encours";
-				$user_type ="etu";
+				$user_type ="ser";
 				echo "<li><a href=\"?page=0\" class=\"btn_menu $encours[0]\">Accueil</a></li>\n";
 				echo "<li><a href=\"?page=1\" class=\"btn_menu $encours[1]\">Envoyer une demande</a></li>\n";
 				if( $user_type == "pro" or $user_type == "ser"){

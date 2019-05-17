@@ -1,0 +1,15 @@
+<table>
+	<tr>
+		<th>État</th>
+		<th>Initiateur</th>
+		<th>Titre</th>
+	</tr>
+	<?php
+		while($row=$histo_dem){
+			echo'<tr>
+					<td>'.$histo_dem['dem_type'].'</td>
+					<td>'.$histo_dem['pers_nom'].'</td>
+					<td>'.$histo_dem['dem_titre'].'</td>
+				</tr>'
+	?>
+</table>
