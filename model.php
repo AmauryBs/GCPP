@@ -30,7 +30,37 @@
 		}
 	}
 
+	class Activite extends Model {
+		public static $table='tr_activite_act';
+		public static $id='act_id';
+	}
+
+	class Demande extends Model {
+		public static $table='tr_demande_dem';
+		public static $id='dem_id';
+	}
+
+	class Fichier extends Model {
+		public static $table='tr_fichier_fic';
+		public static $id='fic_id';
+	}
+
 	class Personne extends Model {
 		public static $table='tr_personne_per';
 		public static $id='per_id';
+	}
+
+	class Etudiant extends Personne {
+		public static $table='tr_etudiant_etu';
+		public static $id='etu_id';
+	}
+
+	class Professeur extends Personne {
+		public static $table='tr_professeur_pro';
+		public static $id='pro_id';
+	}
+
+	class Service extends Personne {
+		public static $table='tr_service_ser';
+		public static $id='ser_id';
 	}
