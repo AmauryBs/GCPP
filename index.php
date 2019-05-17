@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	// This is an example (of an Huffman tree)
+
 	if(!isset($_GET['route']))
 		include 'connexion.php';
 	switch(true) {

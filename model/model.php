@@ -1,5 +1,5 @@
 <?php
-	include 'bdd.php';
+	include '../bdd.php';
 
 	class Model {
 		public static $table='';
