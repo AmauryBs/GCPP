@@ -12,6 +12,6 @@
 					<td>'.$row['dem_type'].'</td>
 					<td>'.$row['pers_nom'].'</td>
 					<td>'.$row['dem_titre'].'</td>
-				</tr>';
+				</tr>';}
 	?>
 </table>
