@@ -38,7 +38,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['password']) && $_SESSION['u
 
 
 		$_SESSION['utilisateur'] = $user;
-		header("Location: .?route=espace");
+		header("Location: .?route=espace&message=Done!");
 	}
 	else
 	{
