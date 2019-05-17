@@ -72,6 +72,8 @@ CREATE TABLE tr_activite_act (
 
 ALTER TABLE tr_fichier_fic
 ADD CONSTRAINT fk_fic_dem FOREIGN KEY (dem_id) REFERENCES tr_demande_dem (dem_id);
+-- ALTER TABLE tr_demande_dem
+-- ADD CONSTRAINT fk_dem_per FOREIGN KEY (per_id) REFERENCES tr_personne_per (per_id);
 ALTER TABLE tj_actpro 
 ADD CONSTRAINT fk_actpro_pro FOREIGN KEY (pro_id) REFERENCES tr_professeur_pro (pro_id);
 ALTER TABLE tj_actpro 

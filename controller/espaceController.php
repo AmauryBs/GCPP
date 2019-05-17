@@ -2,15 +2,15 @@
 	if(isset($_GET['form'])) { switch($_GET['form']) {
 		case 'demandeCreate' :
 			include 'model.php';
-			$demType=['Etudiant'=>'proposition','Professeur'=>'travaux','Service'=>'commande'];
-			Demande::insert(['dem_type'=>$demType[get_class($_SESSION['utilisateur'])],'dem_titre'=>$_POST['titre'],'dem_message'=>$_POST['message']]);
+			$demType=['etudiant'=>'proposition','professeur'=>'travaux','service'=>'commande'];
+			Demande::insert(['dem_type'=>$demType[$_SESSION['utilisateur']['type']],'dem_titre'=>$_POST['titre'],'dem_message'=>$_POST['message'],'per_id'=>$_SESSION['utilisateur']['per_id']]);
 			header('Location: .?route=espace&message=Done!');
 		break;
 		case 'demandeUpdate' :
-			include '../model.php';
-			$demType=['Etudiant'=>'proposition','Professeur'=>'travaux','Service'=>'commande'];
+			include 'model.php';
+			$demType=['professeur'=>'travaux','service'=>'commande'];
 			$dem=new Demande($_POST['id']);
-			$dem->dem_type=$demType[get_class($_SESSION['utilisateur'])];
+			$dem->dem_type=$demType[$_SESSION['utilisateur']['type']];
 			$dem->dem_titre=$_POST['titre'];
 			$dem->dem_message=$_POST['message'];
 			$dem->update();
