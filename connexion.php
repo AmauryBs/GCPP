@@ -10,7 +10,7 @@
 	<main>
 		<header>Gestion des commandes pour projets pédagogiques</header>
 		<section>
-			<form action=".?route=espace&form=connexion" method="post">
+			<form action=".?route=connexion&form=connexion" method="post">
 					<?php
 					$username_set = isset($_POST["username"]) && empty($_POST["username"]);
 					$password_set = isset($_POST["password"])  && empty($_POST["password"]);
