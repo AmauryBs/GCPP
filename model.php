@@ -1,5 +1,5 @@
 <?php
-	include '../bdd.php';
+	include 'bdd.php';
 
 	class Model {
 		public static $table='';
@@ -28,4 +28,9 @@
 				if($property!='table' && $property!='id')
 					BDD::query('UPDATE '.$table.' SET '.$property.'=\''.$this->$property.'\' WHERE '.$id.'='.$this->$id);
 		}
+	}
+
+	class Personne extends Model {
+		public static $table='tr_personne_per';
+		public static $id='per_id';
 	}
