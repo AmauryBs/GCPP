@@ -8,6 +8,6 @@
 		<textarea id="message" name="message">'.$row["dem_message"].'</textarea><br />
 		<!--<input type="file" name="files" multiple><br />-->
 		<button type="submit">Valider</button>
-		</form></li>'
+		</form></li>';
 ?>
 </ul>

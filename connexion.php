@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<?php  
-#Connexion pgsql
-if (isset($_POST["username"]) and isset($_POST["password"])) 
-{
-	
-}
-?>
 <html>
 <head>
     <meta charset="UTF-8" />
