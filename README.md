@@ -14,5 +14,5 @@ TODO
 * Bryan Fauquembergue
 * Clément Gobé
 
-# Improvement
-This project will not have some amelioration. However, you can fork it and share your own ameliorations, while you expect the license.
+# Améliorations
+Ce projet n'aura pas d'amélioration à l'avenir.
