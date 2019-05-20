@@ -1,6 +1,7 @@
 <?php
 	session_start();
 
+	// Router
 	if(!isset($_GET['route']))
 		include_once 'connexion.php';
 	else

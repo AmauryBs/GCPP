@@ -1,17 +1,17 @@
 <?php
 	include 'bdd.php';
 
-	class Model {
+	class Model { // Main model : Simplify CREATE + UPDATE requests
 		public static $table='';
 		public static $id='';
 
-		public function __construct(int $id=null) {
+		public function __construct(int $id=null) { // Get all data that correspound to the id
 			if(BDD::query('SELECT \'X\' FROM '.$this::$table.' WHERE '.$this::$id.'='.$id))
 				foreach(BDD::removeIntIndexes(BDD::query('SELECT * FROM '.$this::$table.' WHERE '.$this::$id.'='.$id)[0]) as $key=>$value)
 					$this->$key=$value;
 		}
 
-		public static function insert(array $data) {
+		public static function insert(array $data) { // Realize an insert in table
 			$sql='INSERT INTO '.static::$table.'(';
 			foreach($data as $key=>$v)
 				$sql.=$key.',';
@@ -22,7 +22,7 @@
 			BDD::query($sql);
 		}
 
-		public function update() {
+		public function update() { // Update data for the instanciated object with id
 			$class=get_class($this); $table=$class::$table; $id=$class::$id;
 			foreach(get_object_vars($this) as $property=>$v)
 				if($property!='table' && $property!='id')
@@ -30,6 +30,7 @@
 		}
 	}
 
+	// Models in table for this project
 	class Activite extends Model {
 		public static $table='tr_activite_act';
 		public static $id='act_id';

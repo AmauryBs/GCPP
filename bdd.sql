@@ -1,3 +1,4 @@
+-- DROP TABLES
 DROP TABLE  IF EXISTS tr_personne_per CASCADE;
 DROP TABLE  IF EXISTS tr_service_ser CASCADE;
 DROP TABLE  IF EXISTS tr_etudiant_etu CASCADE;
@@ -8,6 +9,7 @@ DROP TABLE  IF EXISTS tj_actetu CASCADE;
 DROP TABLE  IF EXISTS tj_actpro CASCADE;
 DROP TABLE  IF EXISTS tr_activite_act CASCADE;
 
+-- CREATE TABLES
 CREATE TABLE tr_personne_per (
 	per_id BIGSERIAL ,
 	per_user VARCHAR(100),
@@ -70,6 +72,7 @@ CREATE TABLE tr_activite_act (
 	CONSTRAINT pk_act PRIMARY KEY (act_id)
 );
 
+-- FOREIGN KEYS
 ALTER TABLE tr_fichier_fic
 ADD CONSTRAINT fk_fic_dem FOREIGN KEY (dem_id) REFERENCES tr_demande_dem (dem_id);
 -- ALTER TABLE tr_demande_dem
@@ -85,6 +88,7 @@ ADD CONSTRAINT fk_actetu_act FOREIGN KEY (act_id) REFERENCES tr_activite_act (ac
 ALTER TABLE tr_demande_dem 
 ADD CONSTRAINT ck_dem_type CHECK (dem_type IN ('proposition', 'travaux', 'commande'));
 
+-- DATA EXAMPLE
 INSERT INTO tr_etudiant_etu(per_user,per_password,per_nom,per_mail) VALUES('etudiant1user','etudiant1password','etudiant1nom','etudiant1mail');
 INSERT INTO tr_etudiant_etu(per_user,per_password,per_nom,per_mail) VALUES('etudiant2user','etudiant2password','etudiant2nom','etudiant2mail');
 INSERT INTO tr_etudiant_etu(per_user,per_password,per_nom,per_mail) VALUES('etudiant3user','etudiant3password','etudiant3nom','etudiant3mail');

@@ -36,7 +36,6 @@ if (isset($_SESSION['username']) && isset($_SESSION['password']) && $_SESSION['u
 			$user = array('per_id' => $result[0][0] , 'per_user' =>$result[0][1],'per_password' =>$result[0][2],'per_nom' =>$result[0][3],'per_mail' =>$result[0][4],'ser_id' =>$res[0][0], 'type' =>'service');
 		}
 
-
 		$_SESSION['utilisateur'] = $user;
 		header("Location: .?route=espace&message=Done!");
 	}
@@ -44,6 +43,4 @@ if (isset($_SESSION['username']) && isset($_SESSION['password']) && $_SESSION['u
 	{
 		echo "incorrect username or password";
 	}
-
-
 }

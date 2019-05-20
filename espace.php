@@ -10,7 +10,7 @@
 	<main>
 		<header>Gestion des commandes pour projets pédagogiques</header>
 		<section>
-			<div id="menu">
+			<div id="menu"><!-- Menu du haut -->
 				<ul id="lemenu">
 				<?php
 				$encours = array(" "," "," "," "," ");
@@ -34,7 +34,7 @@
 				?>
 				</ul>
 			<div>
-			<div id="contenu">
+			<div id="contenu"><!-- Contenu de la page -->
 			    <?php
 			    if( file_exists("page_".$page.".inc.php") ){ 
 			    	include("page_".$page.".inc.php");
