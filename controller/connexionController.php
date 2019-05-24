@@ -1,7 +1,7 @@
 <?php
 $_SESSION["username"]=$_POST['username'];
 $_SESSION["password"]=$_POST['password'];
-include 'model.php';
+include 'model/model.php';
 if (isset($_SESSION['username']) && isset($_SESSION['password']) && $_SESSION['username']!="" && $_SESSION['password']!="" && $_POST['form']="connexion")
 {
 	$sql = "SELECT * FROM tr_personne_per WHERE per_user='".$_SESSION["username"]."' AND per_password='".$_SESSION["password"]."'";

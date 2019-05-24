@@ -3,7 +3,7 @@
 
 	// Router
 	if(!isset($_GET['route']))
-		include_once 'connexion.php';
+		include_once 'view/connexion.php';
 	else
 	{
 		switch(true) {
@@ -20,11 +20,11 @@
 				if (!isset($_SESSION['utilisateur']['per_id']))
 					header('Location : .');
 				include_once 'controller/espaceController.php';
-				include_once 'espace.php';
+				include_once 'view/espace.php';
 			break;
 
 			default:
-				include_once 'connexion.php';
+				include_once 'view/connexion.php';
 			break;
 		}
 	}

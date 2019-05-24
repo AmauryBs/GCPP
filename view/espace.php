@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="style_espace.css" />
+	<link rel="stylesheet" href="view/css/style_espace.css" />
 	<title>GCPP- espace perso</title>
 </head>
 <body>
@@ -36,8 +36,8 @@
 			<div>
 			<div id="contenu"><!-- Contenu de la page -->
 			    <?php
-			    if( file_exists("page_".$page.".inc.php") ){ 
-			    	include("page_".$page.".inc.php");
+			    if( file_exists("view/page_".$page.".inc.php") ){ 
+			    	include("view/page_".$page.".inc.php");
 			   	}
 			      ?>
     	</div>
